@@ -26,34 +26,39 @@ export default async function HomePage({ searchParams }) {
       <div className="shell">
         <section className="hero">
           <div>
-            <p className="eyebrow">Parcel Checker</p>
-            <h1>Fast login gate for the Next.js version.</h1>
+            <p className="eyebrow">Parcel Playground</p>
+            <h1>Welcome to the Mailbox Fun Zone!</h1>
             <p>
-              A small, focused web app with a server-side password check and a
-              clean dashboard handoff.
+              Track letters, packages, and surprises with a bright, kid-friendly
+              dashboard. Grown-ups can hop in below.
             </p>
+            <div className="sticker-row" aria-label="Playful badges">
+              <span className="sticker">✨ Sparkly updates</span>
+              <span className="sticker">📬 Mail magic</span>
+              <span className="sticker">🧁 Sweet rewards</span>
+            </div>
           </div>
 
           <div className="feature-grid" aria-label="Highlights">
             <div className="feature">
-              <strong>Next.js</strong>
-              <span>App router, route handlers, and server rendering.</span>
+              <strong>Colorful quests</strong>
+              <span>Follow every delivery like a treasure hunt.</span>
             </div>
             <div className="feature">
-              <strong>Cookie gate</strong>
-              <span>Simple sign-in state without the Express server.</span>
+              <strong>Friendly helpers</strong>
+              <span>Clear status pills keep surprises easy to spot.</span>
             </div>
             <div className="feature">
-              <strong>Ready to extend</strong>
-              <span>Drop in the parcel UI when you are ready.</span>
+              <strong>Ready for fun</strong>
+              <span>Pop in new adventures whenever you like.</span>
             </div>
           </div>
         </section>
 
         <section className="panel">
           <div className="card">
-            <h2>Sign in</h2>
-            <p>Use the email and password from your environment file.</p>
+            <h2>Grown-up sign in</h2>
+            <p>Ask a parent to enter the secret email and password.</p>
 
             {message ? <div className="alert">{message}</div> : null}
 
@@ -64,19 +69,19 @@ export default async function HomePage({ searchParams }) {
                   id="email"
                   name="email"
                   type="email"
-                  placeholder="Enter email"
+                  placeholder="Grown-up email"
                   defaultValue={process.env.LOGIN_EMAIL || ''}
                   required
                 />
               </div>
 
               <div className="field">
-                <label htmlFor="password">Password</label>
-                <PasswordField id="password" name="password" placeholder="Enter password" />
+                <label htmlFor="password">Secret password</label>
+                <PasswordField id="password" name="password" placeholder="Type the secret password" />
               </div>
 
               <button className="button" type="submit">
-                Enter dashboard
+                Open the clubhouse
               </button>
             </form>
           </div>

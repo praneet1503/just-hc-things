@@ -78,10 +78,10 @@ export default async function DashboardPage() {
       <div className="shell" style={{ gridTemplateColumns: '1fr' }}>
         <section className="panel">
           <div className="card">
-            <p className="eyebrow">Dashboard</p>
-            <h2>Hack Club Mail data</h2>
+            <p className="eyebrow">Mailbox Mission</p>
+            <h2>Mailbox Mission Board</h2>
             <p>
-              Live records are now fetched from <strong>{dashboardData.baseUrl || 'the configured API'}</strong> and rendered here.
+              Live records are fetched from <strong>{dashboardData.baseUrl || 'the configured API'}</strong> and shown here.
             </p>
 
             <div className="stack" aria-label="Status">
@@ -90,11 +90,11 @@ export default async function DashboardPage() {
                 <strong>Authenticated</strong>
               </div>
               <div className="stat">
-                <small>Signed-in email</small>
+                <small>Grown-up email</small>
                 <strong>{process.env.LOGIN_EMAIL || 'not configured'}</strong>
               </div>
               <div className="stat">
-                <small>Account id</small>
+                <small>Clubhouse id</small>
                 <strong>{dashboardData.accountId || 'Unavailable'}</strong>
               </div>
             </div>
@@ -116,8 +116,8 @@ export default async function DashboardPage() {
 
             <section style={{ marginTop: '28px' }}>
               <p className="eyebrow">Latest records</p>
-              <h3>Fetched from the live API</h3>
-              <p>Tracking links and record details stay visible, while extra metadata sits behind dropdowns.</p>
+              <h3>Fresh from the mailbox</h3>
+              <p>Tracking links stay visible while bonus details hide under flip tabs.</p>
 
               <div className="api-grid">
                 <article className="api-card">
@@ -217,8 +217,8 @@ export default async function DashboardPage() {
             </section>
 
             <section style={{ marginTop: '28px' }}>
-              <p className="eyebrow">Route health</p>
-              <h3>What is wired in</h3>
+              <p className="eyebrow">Helper routes</p>
+              <h3>Behind-the-scenes helpers</h3>
               <p>
                 The dashboard also checks the authenticated API routes. The <strong>mail</strong> route is the write endpoint and is marked for manual verification.
               </p>
@@ -246,7 +246,7 @@ export default async function DashboardPage() {
 
             <form action="/api/logout" method="POST" style={{ marginTop: '24px' }}>
               <button className="button ghost" type="submit">
-                Sign out
+                Wave goodbye
               </button>
             </form>
           </div>
