@@ -1,5 +1,5 @@
 import PinnableList from '../../components/pinnable-list';
-import { getMailDashboardData } from '../../../lib/parcel-api';
+import { getMailDashboardData as getDashboardData } from '../../../lib/parcel-api';
 
 function formatTimestamp(value) {
   if (!value) {
@@ -31,7 +31,7 @@ function buildStatusTone(status) {
 }
 
 export default async function MailPage() {
-  const dashboardData = await getMailDashboardData();
+  const dashboardData = await getDashboardData();
 
   const letterItems = dashboardData.letters.list.map((letter) => ({
     id: String(letter.id),

@@ -1,4 +1,4 @@
-import { getApiDiagnostics, getMailDashboardData } from '../../../lib/parcel-api';
+import { getApiDiagnostics, getMailDashboardData as getDashboardData } from '../../../lib/parcel-api';
 
 function getProbeClass(status) {
   if (status === 'ok') {
@@ -13,10 +13,7 @@ function getProbeClass(status) {
 }
 
 export default async function AccountPage() {
-  const [diagnostics, dashboardData] = await Promise.all([
-    getApiDiagnostics(),
-    getMailDashboardData(),
-  ]);
+  const [diagnostics, dashboardData] = await Promise.all([getApiDiagnostics(), getDashboardData()]);
 
   return (
     <section className="panel">

@@ -1,5 +1,5 @@
 import PinnableList from '../../components/pinnable-list';
-import { getMailDashboardData } from '../../../lib/parcel-api';
+import { getMailDashboardData as getDashboardData } from '../../../lib/parcel-api';
 
 function formatContents(contents) {
   if (!Array.isArray(contents) || contents.length === 0) {
@@ -22,7 +22,7 @@ function buildStatusTone(status) {
 }
 
 export default async function ParcelsPage() {
-  const dashboardData = await getMailDashboardData();
+  const dashboardData = await getDashboardData();
 
   const parcelItems = dashboardData.packages.list.map((parcel) => ({
     id: String(parcel.id),
