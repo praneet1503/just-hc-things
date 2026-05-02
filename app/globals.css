@@ -5,7 +5,7 @@
   --surface: rgba(255, 255, 255, 0.9);
   --surface-strong: #fffdf6;
   --text: #2b2b45;
-  --muted: #5f5f7a;
+  --muted: #4b4b66;
   --accent: #ff7ab6;
   --accent-2: #6c63ff;
   --accent-3: #ffd166;
@@ -25,7 +25,7 @@ body {
 }
 
 body {
-  font-family: "Comic Sans MS", "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+  font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
   color: var(--text);
   background:
     radial-gradient(circle at 12% 15%, rgba(255, 255, 255, 0.85), transparent 45%),
@@ -127,7 +127,7 @@ input {
   max-width: 34ch;
   font-size: 1.02rem;
   line-height: 1.6;
-  color: rgba(43, 43, 69, 0.8);
+  color: var(--text);
 }
 
 .sticker-row {
