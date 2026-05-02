@@ -1,5 +1,5 @@
 import PinnableList from '../../components/pinnable-list';
-import { getMailDashboardData as getDashboardData } from '../../../lib/parcel-api';
+import { getDashboardData } from '../../../lib/parcel-api';
 
 function formatTimestamp(value) {
   if (!value) {
@@ -44,8 +44,8 @@ export default async function MailPage() {
     detail: letter.tags?.length ? `Tags: ${letter.tags.join(', ')}` : '',
   }));
 
-  const lsvItems = dashboardData.lsv.list.map((record) => ({
-    id: `${record.type || 'lsv'}-${record.id}`,
+  const lsvItems = dashboardData.lsv.list.map((record, index) => ({
+    id: String(record.id || record.original_id || record.public_url || `${record.type || 'lsv'}-${index}`),
     title: record.title || 'LSV record',
     linkLabel: record.public_url ? 'Open LSV record' : 'No public link',
     link: record.public_url || null,

@@ -1,4 +1,4 @@
-import { getApiDiagnostics, getMailDashboardData as getDashboardData } from '../../../lib/parcel-api';
+import { getApiDiagnostics, getDashboardData } from '../../../lib/parcel-api';
 
 function getProbeClass(status) {
   if (status === 'ok') {

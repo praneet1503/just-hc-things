@@ -31,7 +31,7 @@ export default function PinnableList({ items, storageKey, emptyLabel }) {
 
   const togglePinned = (id) => {
     setPinnedId((current) => {
-      const next = current === id ? '' : id;
+      const next = current === id ? null : id;
 
       if (typeof window !== 'undefined') {
         if (next) {
@@ -41,7 +41,7 @@ export default function PinnableList({ items, storageKey, emptyLabel }) {
         }
       }
 
-      return next || null;
+      return next;
     });
   };
 

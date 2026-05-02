@@ -1,5 +1,5 @@
 import PinnableList from '../../components/pinnable-list';
-import { getMailDashboardData as getDashboardData } from '../../../lib/parcel-api';
+import { getDashboardData } from '../../../lib/parcel-api';
 
 function formatContents(contents) {
   if (!Array.isArray(contents) || contents.length === 0) {
