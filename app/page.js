@@ -32,7 +32,7 @@ export default async function HomePage({ searchParams }) {
               Track letters, packages, and surprises with a bright, kid-friendly
               dashboard. Grown-ups can hop in below.
             </p>
-            <div className="sticker-row" aria-label="Playful badges">
+            <div className="sticker-row" aria-label="Feature highlights">
               <span className="sticker">✨ Sparkly updates</span>
               <span className="sticker">📬 Mail magic</span>
               <span className="sticker">🧁 Sweet rewards</span>
