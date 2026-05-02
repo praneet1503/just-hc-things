@@ -1,0 +1,8 @@
+/api/public/v1/me
+/api/public/v1/mail (the important one)
+/api/public/v1/letters
+/api/public/v1/letters/:id
+/api/public/v1/packages
+/api/public/v1/packages/:id
+/api/public/v1/lsv
+/api/public/v1/lsv/:type/:id
