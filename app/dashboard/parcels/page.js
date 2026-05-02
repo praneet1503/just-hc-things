@@ -3,7 +3,7 @@ import { getDashboardData } from '../../../lib/parcel-api';
 
 function formatContents(contents) {
   if (!Array.isArray(contents) || contents.length === 0) {
-    return 'No contents listed';
+    return 'None';
   }
 
   return contents.map((item) => item.name).join(', ');

@@ -45,7 +45,7 @@ export default async function MailPage() {
   }));
 
   const lsvItems = dashboardData.lsv.list.map((record, index) => ({
-    id: String(record.id || record.original_id || record.public_url || `${record.type || 'lsv'}-${index}`),
+    id: String(record.id ?? index),
     title: record.title || 'LSV record',
     linkLabel: record.public_url ? 'Open LSV record' : 'No public link',
     link: record.public_url || null,
