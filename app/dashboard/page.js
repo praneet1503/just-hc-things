@@ -94,7 +94,7 @@ export default async function DashboardPage() {
                 <strong>{process.env.LOGIN_EMAIL || 'not configured'}</strong>
               </div>
               <div className="stat">
-                <small>Clubhouse id</small>
+                <small>Member badge number</small>
                 <strong>{dashboardData.accountId || 'Unavailable'}</strong>
               </div>
             </div>

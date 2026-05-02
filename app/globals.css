@@ -25,7 +25,7 @@ body {
 }
 
 body {
-  font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+  font-family: "Trebuchet MS", Verdana, "Segoe UI", Arial, sans-serif;
   color: var(--text);
   background:
     radial-gradient(circle at 12% 15%, rgba(255, 255, 255, 0.85), transparent 45%),

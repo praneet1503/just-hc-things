@@ -58,7 +58,7 @@ export default async function HomePage({ searchParams }) {
         <section className="panel">
           <div className="card">
             <h2>Grown-up sign in</h2>
-            <p>Grown-ups: enter the secret email and password to continue.</p>
+            <p>Grown-ups, enter your secret email and password to continue.</p>
 
             {message ? <div className="alert">{message}</div> : null}
 
@@ -76,8 +76,8 @@ export default async function HomePage({ searchParams }) {
               </div>
 
               <div className="field">
-                <label htmlFor="password">Secret password</label>
-                <PasswordField id="password" name="password" placeholder="Type the secret password" />
+                <label htmlFor="password">Grown-up password</label>
+                <PasswordField id="password" name="password" placeholder="Type the grown-up password" />
               </div>
 
               <button className="button" type="submit">
