@@ -58,7 +58,7 @@ export default async function HomePage({ searchParams }) {
         <section className="panel">
           <div className="card">
             <h2>Grown-up sign in</h2>
-            <p>Ask a parent to enter the secret email and password.</p>
+            <p>Grown-ups: enter the secret email and password to continue.</p>
 
             {message ? <div className="alert">{message}</div> : null}
 

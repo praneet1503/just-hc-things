@@ -79,7 +79,7 @@ export default async function DashboardPage() {
         <section className="panel">
           <div className="card">
             <p className="eyebrow">Mailbox Mission</p>
-            <h2>Mailbox Mission Board</h2>
+            <h2>Mission Board</h2>
             <p>
               Live records are fetched from <strong>{dashboardData.baseUrl || 'the configured API'}</strong> and shown here.
             </p>
