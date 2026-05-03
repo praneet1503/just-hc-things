@@ -13,7 +13,8 @@ function getProbeClass(status) {
 }
 
 export default async function AccountPage() {
-  const [diagnostics, dashboardData] = await Promise.all([getApiDiagnostics(), getDashboardData()]);
+  const dashboardData = await getDashboardData();
+  const diagnostics = await getApiDiagnostics({ cachedResponses: dashboardData.responses });
 
   return (
     <section className="panel">

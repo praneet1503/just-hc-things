@@ -70,7 +70,6 @@ export default async function HomePage({ searchParams }) {
                   name="email"
                   type="email"
                   placeholder="Grown-up email"
-                  defaultValue={process.env.LOGIN_EMAIL || ''}
                   required
                 />
               </div>

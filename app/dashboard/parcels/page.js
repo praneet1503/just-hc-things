@@ -1,26 +1,7 @@
 import PinnableList from '../../components/pinnable-list';
 import { getDashboardData } from '../../../lib/parcel-api';
+import { buildStatusTone, formatContents } from '../../../lib/parcel-formatters';
 import { buildTrackingLink } from '../../../lib/tracking-links';
-
-function formatContents(contents) {
-  if (!Array.isArray(contents) || contents.length === 0) {
-    return 'None';
-  }
-
-  return contents.map((item) => item.name).join(', ');
-}
-
-function buildStatusTone(status) {
-  if (!status) {
-    return 'neutral';
-  }
-
-  if (['delivered', 'complete', 'received', 'success'].some((value) => status.toLowerCase().includes(value))) {
-    return 'ok';
-  }
-
-  return 'neutral';
-}
 
 export default async function ParcelsPage() {
   const dashboardData = await getDashboardData();

@@ -1,5 +1,7 @@
 import PinnableList from '../../components/pinnable-list';
 import { getDashboardData } from '../../../lib/parcel-api';
+import { buildStatusTone } from '../../../lib/parcel-formatters';
+import { buildTrackingLink } from '../../../lib/tracking-links';
 
 function formatTimestamp(value) {
   if (!value) {
@@ -18,18 +20,6 @@ function formatTimestamp(value) {
   }).format(date);
 }
 
-function buildStatusTone(status) {
-  if (!status) {
-    return 'neutral';
-  }
-
-  if (['delivered', 'complete', 'received', 'success'].some((value) => status.toLowerCase().includes(value))) {
-    return 'ok';
-  }
-
-  return 'neutral';
-}
-
 export default async function MailPage() {
   const dashboardData = await getDashboardData();
 
@@ -44,16 +34,32 @@ export default async function MailPage() {
     detail: letter.tags?.length ? `Tags: ${letter.tags.join(', ')}` : '',
   }));
 
-  const lsvItems = dashboardData.lsv.list.map((record, index) => ({
-    id: String(record.id ?? index),
-    title: record.title || 'LSV record',
-    linkLabel: record.public_url ? 'Open LSV record' : 'No public link',
-    link: record.public_url || null,
-    status: record.status || 'unknown',
-    statusTone: buildStatusTone(record.status),
-    meta: `Type: ${record.type || 'Unknown'} · Subtype: ${record.subtype || 'n/a'}`,
-    detail: record.tracking_number ? `Tracking: ${record.tracking_number}` : '',
-  }));
+  const lsvItems = dashboardData.lsv.list.map((record, index) => {
+    const trackingLink = buildTrackingLink({
+      carrier: record.carrier,
+      trackingNumber: record.tracking_number,
+      fallback: record.tracking_link,
+    });
+    const link = trackingLink || record.public_url || null;
+    const linkLabel = trackingLink
+      ? record.tracking_number
+        ? `Tracking: ${record.tracking_number}`
+        : 'Open tracking link'
+      : record.public_url
+        ? 'Open LSV record'
+        : 'No public link';
+
+    return {
+      id: String(record.id ?? index),
+      title: record.title || 'LSV record',
+      linkLabel,
+      link,
+      status: record.status || 'unknown',
+      statusTone: buildStatusTone(record.status),
+      meta: `Type: ${record.type || 'Unknown'} · Subtype: ${record.subtype || 'n/a'}`,
+      detail: record.tracking_number ? `Tracking: ${record.tracking_number}` : '',
+    };
+  });
 
   return (
     <section className="panel">

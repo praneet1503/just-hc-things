@@ -10,9 +10,13 @@ export default function PinnableList({ items, storageKey, emptyLabel }) {
       return;
     }
 
-    const stored = window.localStorage.getItem(storageKey);
-    if (stored) {
-      setPinnedId(stored);
+    try {
+      const stored = window.localStorage.getItem(storageKey);
+      if (stored) {
+        setPinnedId(stored);
+      }
+    } catch {
+      setPinnedId(null);
     }
   }, [storageKey]);
 
@@ -34,11 +38,13 @@ export default function PinnableList({ items, storageKey, emptyLabel }) {
       const next = current === id ? null : id;
 
       if (typeof window !== 'undefined') {
-        if (next) {
-          window.localStorage.setItem(storageKey, next);
-        } else {
-          window.localStorage.removeItem(storageKey);
-        }
+        try {
+          if (next) {
+            window.localStorage.setItem(storageKey, next);
+          } else {
+            window.localStorage.removeItem(storageKey);
+          }
+        } catch {}
       }
 
       return next;
@@ -76,6 +82,7 @@ export default function PinnableList({ items, storageKey, emptyLabel }) {
                   type="button"
                   onClick={() => togglePinned(item.id)}
                   aria-pressed={isPinned}
+                  aria-label={isPinned ? `Unpin ${item.title}` : `Pin ${item.title} to top`}
                 >
                   {isPinned ? 'Unpin' : 'Pin to top'}
                 </button>
