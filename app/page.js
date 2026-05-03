@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 import PasswordField from './components/password-field';
@@ -86,12 +85,6 @@ export default async function HomePage({ searchParams }) {
               </button>
             </form>
 
-            <div className="stack">
-              <Link className="button ghost" href="/tracking">
-                View package tracking links
-              </Link>
-              <p>No sign-in needed to open tracking links.</p>
-            </div>
           </div>
         </section>
       </div>
