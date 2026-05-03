@@ -2,21 +2,30 @@
 
 import { useEffect, useMemo, useState } from 'react';
 
+function getSafeStorage() {
+  if (typeof window === 'undefined') {
+    return null;
+  }
+
+  try {
+    return window.localStorage;
+  } catch {
+    return null;
+  }
+}
+
 export default function PinnableList({ items, storageKey, emptyLabel }) {
   const [pinnedId, setPinnedId] = useState(null);
 
   useEffect(() => {
-    if (typeof window === 'undefined') {
+    const storage = getSafeStorage();
+    if (!storage) {
       return;
     }
 
-    try {
-      const stored = window.localStorage.getItem(storageKey);
-      if (stored) {
-        setPinnedId(stored);
-      }
-    } catch {
-      setPinnedId(null);
+    const stored = storage.getItem(storageKey);
+    if (stored) {
+      setPinnedId(stored);
     }
   }, [storageKey]);
 
@@ -37,14 +46,13 @@ export default function PinnableList({ items, storageKey, emptyLabel }) {
     setPinnedId((current) => {
       const next = current === id ? null : id;
 
-      if (typeof window !== 'undefined') {
-        try {
-          if (next) {
-            window.localStorage.setItem(storageKey, next);
-          } else {
-            window.localStorage.removeItem(storageKey);
-          }
-        } catch {}
+      const storage = getSafeStorage();
+      if (storage) {
+        if (next) {
+          storage.setItem(storageKey, next);
+        } else {
+          storage.removeItem(storageKey);
+        }
       }
 
       return next;
