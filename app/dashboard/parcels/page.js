@@ -21,6 +21,16 @@ function buildStatusTone(status) {
   return 'neutral';
 }
 
+function buildTrackingLink({ carrier, trackingNumber, fallback }) {
+  const normalizedCarrier = carrier ? carrier.toLowerCase() : '';
+
+  if (trackingNumber && normalizedCarrier.includes('asendia')) {
+    return `https://tracking.asendia.com/tracking?trackingnumber=${encodeURIComponent(trackingNumber)}`;
+  }
+
+  return fallback || null;
+}
+
 export default async function ParcelsPage() {
   const dashboardData = await getDashboardData();
 
@@ -28,7 +38,11 @@ export default async function ParcelsPage() {
     id: String(parcel.id),
     title: parcel.title || 'Package update',
     linkLabel: parcel.tracking_number ? `Tracking: ${parcel.tracking_number}` : 'Tracking unavailable',
-    link: parcel.tracking_link || null,
+    link: buildTrackingLink({
+      carrier: parcel.carrier,
+      trackingNumber: parcel.tracking_number,
+      fallback: parcel.tracking_link,
+    }),
     status: parcel.status || 'unknown',
     statusTone: buildStatusTone(parcel.status),
     meta: `Carrier: ${parcel.carrier || 'Unknown'} · Weight: ${parcel.weight || 'Unknown'} lbs`,
