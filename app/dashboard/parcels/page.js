@@ -1,5 +1,6 @@
 import PinnableList from '../../components/pinnable-list';
 import { getDashboardData } from '../../../lib/parcel-api';
+import { buildTrackingLink } from '../../../lib/tracking-links';
 
 function formatContents(contents) {
   if (!Array.isArray(contents) || contents.length === 0) {
@@ -19,16 +20,6 @@ function buildStatusTone(status) {
   }
 
   return 'neutral';
-}
-
-function buildTrackingLink({ carrier, trackingNumber, fallback }) {
-  const normalizedCarrier = carrier ? carrier.toLowerCase() : '';
-
-  if (trackingNumber && normalizedCarrier.includes('asendia')) {
-    return `https://tracking.asendia.com/tracking?trackingnumber=${encodeURIComponent(trackingNumber)}`;
-  }
-
-  return fallback || null;
 }
 
 export default async function ParcelsPage() {
