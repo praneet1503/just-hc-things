@@ -26,7 +26,7 @@ export default async function HomePage({ searchParams }) {
       <div className="shell auth-shell">
         <section className="panel">
           <div className="card">
-            <h2>Mailpheus sign in</h2>
+            <h1>Mailpheus sign in</h1>
             <p>Grown-ups, enter your email and password to access Mailpheus.</p>
 
             {message ? <div className="alert">{message}</div> : null}

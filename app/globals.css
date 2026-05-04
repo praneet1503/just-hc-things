@@ -104,6 +104,7 @@ input {
   box-shadow: 0 12px 24px rgba(43, 43, 69, 0.08);
 }
 
+.card h1,
 .card h2,
 .card h3 {
   margin: 0;
