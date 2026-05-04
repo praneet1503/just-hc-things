@@ -1,4 +1,4 @@
-# Parcel Checker — Local instructions
+# Mailpheus — Local instructions
 
 1. Set `LOGIN_EMAIL`, `LOGIN_PASSWORD`, `API_KEY`, and optionally `API_BASE_URL` in `.env`.
 

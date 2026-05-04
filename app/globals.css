@@ -64,40 +64,15 @@ input {
   gap: 28px;
 }
 
-.hero,
+.shell.auth-shell {
+  width: min(520px, 100%);
+  grid-template-columns: 1fr;
+}
+
 .panel {
   border: 3px solid var(--border-strong);
   border-radius: 30px;
   box-shadow: var(--shadow);
-}
-
-.hero {
-  padding: 40px;
-  background: linear-gradient(160deg, #ffb8e1, #b9f0ff);
-  color: var(--text);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 560px;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(circle at 12% 30%, rgba(255, 255, 255, 0.5), transparent 38%),
-    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.4), transparent 45%),
-    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.35), transparent 42%);
-  opacity: 0.7;
-  pointer-events: none;
-}
-
-.hero > * {
-  position: relative;
-  z-index: 1;
 }
 
 .eyebrow {
@@ -115,67 +90,6 @@ input {
   font-weight: 700;
 }
 
-.hero h1 {
-  margin: 0;
-  font-size: clamp(2.5rem, 6vw, 4.8rem);
-  line-height: 1;
-  max-width: 12ch;
-}
-
-.hero p {
-  margin: 18px 0 0;
-  max-width: 34ch;
-  font-size: 1.02rem;
-  line-height: 1.6;
-  color: var(--text);
-}
-
-.sticker-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.sticker {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.8);
-  border: 2px solid rgba(43, 43, 69, 0.18);
-  font-weight: 700;
-  font-size: 0.85rem;
-  box-shadow: 0 6px 0 rgba(255, 209, 102, 0.5);
-}
-
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 32px;
-}
-
-.feature {
-  padding: 16px;
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.75);
-  border: 2px solid rgba(43, 43, 69, 0.18);
-  box-shadow: 0 8px 0 rgba(108, 99, 255, 0.2);
-}
-
-.feature strong {
-  display: block;
-  margin-bottom: 6px;
-}
-
-.feature span {
-  color: var(--muted);
-  font-size: 0.92rem;
-  line-height: 1.4;
-}
-
 .panel {
   background: var(--surface);
   padding: 30px;
@@ -190,6 +104,7 @@ input {
   box-shadow: 0 12px 24px rgba(43, 43, 69, 0.08);
 }
 
+.card h1,
 .card h2,
 .card h3 {
   margin: 0;
@@ -525,14 +440,6 @@ input {
   .nav-links {
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   }
-
-  .hero {
-    min-height: auto;
-  }
-
-  .feature-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 640px) {
@@ -540,7 +447,6 @@ input {
     padding: 16px;
   }
 
-  .hero,
   .panel,
   .card {
     padding: 20px;

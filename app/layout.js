@@ -1,8 +1,8 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'Parcel Playground',
-  description: 'A playful, kid-friendly mailbox dashboard with a grown-up login gate.',
+  title: 'Mailpheus',
+  description: 'A playful, kid-friendly Mailpheus dashboard with a grown-up login gate.',
 };
 
 export default function RootLayout({ children }) {

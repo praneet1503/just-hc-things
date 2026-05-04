@@ -25,7 +25,7 @@ export default async function ParcelsPage() {
     <section className="panel">
       <div className="card">
         <p className="eyebrow">Parcels</p>
-        <h2>Parcel Parade</h2>
+        <h2>Mailpheus Parcels</h2>
         <p>Pin the parcel you want to watch and we will keep it at the top.</p>
 
         <section className="section-stack">
