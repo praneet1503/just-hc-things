@@ -65,7 +65,7 @@ export default async function MailPage() {
     <section className="panel">
       <div className="card">
         <p className="eyebrow">Mail</p>
-        <h2>Mailbox Missions</h2>
+        <h2>Mailpheus Missions</h2>
         <p>Pin your favorite mail to keep it at the very top.</p>
 
         <section className="section-stack">

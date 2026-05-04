@@ -1,6 +1,6 @@
-# just-hc-things
+# Mailpheus
 
-Minimal Next.js login demo for parcel testing.
+Minimal Next.js login demo for Mailpheus testing.
 
 ## Setup
 

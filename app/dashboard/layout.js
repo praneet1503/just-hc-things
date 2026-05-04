@@ -15,7 +15,7 @@ export default async function DashboardLayout({ children }) {
       <div className="shell dashboard-shell">
         <aside className="dashboard-nav" aria-label="Dashboard navigation">
           <div className="nav-card">
-            <p className="nav-title">Mailbox Menu</p>
+            <p className="nav-title">Mailpheus Menu</p>
             <nav className="nav-links">
               <Link href="/dashboard/account">Account</Link>
               <Link href="/dashboard/mail">Mail</Link>

@@ -20,7 +20,7 @@ export default async function AccountPage() {
     <section className="panel">
       <div className="card">
         <p className="eyebrow">Account</p>
-        <h2>Clubhouse Account</h2>
+        <h2>Mailpheus Account</h2>
         <p>
           Live records are fetched from <strong>{dashboardData.baseUrl || 'the configured API'}</strong> and summarized
           below.

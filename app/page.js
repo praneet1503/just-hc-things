@@ -23,42 +23,11 @@ export default async function HomePage({ searchParams }) {
 
   return (
     <main className="page">
-      <div className="shell">
-        <section className="hero">
-          <div>
-            <p className="eyebrow">Parcel Playground</p>
-            <h1>Welcome to the Mailbox Fun Zone!</h1>
-            <p>
-              Track letters, packages, and surprises with a bright, kid-friendly
-              dashboard. Grown-ups can hop in below.
-            </p>
-            <div className="sticker-row" aria-label="Feature highlights">
-              <span className="sticker">✨ Sparkly updates</span>
-              <span className="sticker">📬 Mail magic</span>
-              <span className="sticker">🧁 Sweet rewards</span>
-            </div>
-          </div>
-
-          <div className="feature-grid" aria-label="Highlights">
-            <div className="feature">
-              <strong>Colorful quests</strong>
-              <span>Follow every delivery like a treasure hunt.</span>
-            </div>
-            <div className="feature">
-              <strong>Friendly helpers</strong>
-              <span>Clear status pills keep surprises easy to spot.</span>
-            </div>
-            <div className="feature">
-              <strong>Ready for fun</strong>
-              <span>Pop in new adventures whenever you like.</span>
-            </div>
-          </div>
-        </section>
-
+      <div className="shell auth-shell">
         <section className="panel">
           <div className="card">
-            <h2>Grown-up sign in</h2>
-            <p>Grown-ups, enter your secret email and password to continue.</p>
+            <h2>Mailpheus sign in</h2>
+            <p>Grown-ups, enter your email and password to access Mailpheus.</p>
 
             {message ? <div className="alert">{message}</div> : null}
 
@@ -80,10 +49,9 @@ export default async function HomePage({ searchParams }) {
               </div>
 
               <button className="button" type="submit">
-                Open the clubhouse
+                Enter Mailpheus
               </button>
             </form>
-
           </div>
         </section>
       </div>
